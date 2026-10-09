@@ -3,33 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ritu Bhatiya</title>
+  <title>Nerdy Nova</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --cream: #f4ecd2;
-      --muted: #b9b08f;
-      --sage: #c9d48a;
-      --amber: #e2a85c;
-      --serif: "Instrument Serif", Georgia, serif;
-      --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+      --white: #ffffff;
+      --muted: #b3a6cc;
+      --lilac: #c9a6ff;
+      --violet: #9d4dff;
+      --pixel: "Pixelify Sans", ui-monospace, Menlo, monospace;
     }
 
     body {
       margin: 0;
       min-height: 100vh;
-      background: linear-gradient(160deg, #1b1f0e, #14170c 50%, #2b1e12);
-      color: var(--cream);
-      font-family: var(--mono);
+      background: linear-gradient(160deg, #06000f, #000000 50%, #0a0218);
+      color: var(--white);
+      font-family: var(--pixel);
       overflow-x: hidden;
       cursor: crosshair;
     }
 
-    /* Layer 1: big soft blobs of olive and brown light, drifting slowly */
+    /* Layer 1: big soft blobs of purple light, drifting slowly */
     .glow {
       position: fixed;
       inset: 0;
@@ -43,13 +42,13 @@
       height: 55vmax;
       border-radius: 50%;
       filter: blur(90px);
-      opacity: 0.55;
+      opacity: 0.28;
       animation: wander 22s ease-in-out infinite alternate;
     }
 
-    .blob:nth-child(1) { background: #6b7a3a; top: -20%; left: -15%; }
-    .blob:nth-child(2) { background: #7a4a22; bottom: -25%; right: -15%; animation-duration: 27s; animation-delay: -8s; }
-    .blob:nth-child(3) { background: #3f5a2a; top: 30%; left: 35%; width: 40vmax; height: 40vmax; animation-duration: 18s; animation-delay: -4s; }
+    .blob:nth-child(1) { background: #7d00ff; top: -20%; left: -15%; }
+    .blob:nth-child(2) { background: #3a1aff; bottom: -25%; right: -15%; animation-duration: 27s; animation-delay: -8s; }
+    .blob:nth-child(3) { background: #b44dff; top: 30%; left: 35%; width: 40vmax; height: 40vmax; animation-duration: 18s; animation-delay: -4s; }
 
     @keyframes wander {
       from { translate: -8vw -6vh; scale: 1; }
@@ -65,34 +64,7 @@
       pointer-events: none;
     }
 
-    /* Layer 3: the stickers */
-    .stickers {
-      position: fixed;
-      inset: 0;
-      overflow: hidden;
-      pointer-events: none;
-      transition: translate 0.4s ease-out;
-    }
-
-    .sticker {
-      position: absolute;
-      font-size: 3.2rem;
-      font-weight: 700;
-      color: #f7931a;
-      filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.5));
-      animation: float 6s ease-in-out infinite alternate;
-      transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.3, 1.4);
-    }
-
-    .sticker:nth-child(2n) { animation-duration: 4.5s; }
-    .sticker:nth-child(3n) { animation-delay: -2s; }
-
-    @keyframes float {
-      from { translate: 0 -12px; }
-      to   { translate: 0 12px; }
-    }
-
-    /* Layer 4: the words */
+    /* Layer 3: the words */
     main {
       position: relative;
       min-height: 100vh;
@@ -110,7 +82,6 @@
     }
 
     h1       { animation-delay: 0.25s; }
-    .role    { animation-delay: 0.45s; }
     .about   { animation-delay: 0.65s; }
 
     @keyframes rise {
@@ -121,13 +92,11 @@
     h1 {
       margin: 0;
       padding: 0 0.1em 0.2em;
-      font-family: var(--serif);
-      font-style: italic;
-      font-weight: 400;
-      font-size: clamp(3.4rem, 13vw, 9.5rem);
+      font-family: var(--pixel);
+      font-weight: 700;
+      font-size: clamp(3rem, 12vw, 8.5rem);
       line-height: 1.15;
-      letter-spacing: -0.02em;
-      background: linear-gradient(100deg, var(--cream), var(--sage), var(--amber), var(--cream));
+      background: linear-gradient(100deg, var(--white), var(--lilac), var(--violet), var(--white));
       background-size: 250% 100%;
       -webkit-background-clip: text;
       background-clip: text;
@@ -140,32 +109,22 @@
       to   { background-position: 250% 0; }
     }
 
-    .role {
-      margin: 0;
-      font-size: clamp(0.85rem, 2.4vw, 1.05rem);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .role span { color: var(--amber); }
-
-    .about { margin-top: 72px; }
+    .about { margin-top: 40px; }
 
     h2 {
       margin: 0;
-      font-size: 0.8rem;
+      font-size: 1rem;
       font-weight: 500;
       letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: var(--sage);
+      color: var(--lilac);
     }
 
     h2::before { content: "// "; opacity: 0.6; }
 
     .reads {
       margin: 18px 0 0;
-      font-size: 1rem;
+      font-size: 1.25rem;
       color: var(--muted);
     }
 
@@ -173,11 +132,11 @@
       display: block;
       min-height: 1.2em;
       margin-top: 4px;
-      font-family: var(--serif);
-      font-style: italic;
+      font-family: var(--pixel);
+      font-weight: 600;
       font-size: clamp(2.2rem, 7vw, 4rem);
       line-height: 1.2;
-      color: var(--amber);
+      color: var(--violet);
     }
 
     .typed::after {
@@ -186,7 +145,7 @@
       width: 2px;
       height: 0.8em;
       margin-left: 6px;
-      background: var(--cream);
+      background: var(--white);
       animation: blink 1s steps(1) infinite;
     }
 
@@ -200,21 +159,21 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 6px 14px;
-      font-size: 0.85rem;
-      color: var(--cream);
+      font-size: 1.1rem;
+      color: var(--white);
     }
 
     .tags li + li::before {
       content: "✦";
       margin-right: 14px;
-      color: var(--sage);
+      color: var(--lilac);
     }
 
     /* Tiny read-outs in the corners */
     .hud {
       position: fixed;
       bottom: 18px;
-      font-size: 0.7rem;
+      font-size: 0.85rem;
       letter-spacing: 0.15em;
       color: var(--muted);
       opacity: 0.8;
@@ -225,10 +184,6 @@
     .hud.right { right: 20px; animation: pulse 2.4s ease-in-out infinite; }
 
     @keyframes pulse { 50% { opacity: 0.3; } }
-
-    @media (max-width: 700px) {
-      .sticker { font-size: 2.1rem; opacity: 0.5; }
-    }
 
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -244,27 +199,8 @@
 
   <canvas aria-hidden="true"></canvas>
 
-  <div class="stickers" aria-hidden="true">
-    <span class="sticker" style="top: 6%; left: 5%; rotate: -12deg;">🪐</span>
-    <span class="sticker" style="top: 25%; left: 16%; rotate: 10deg;">⭐</span>
-    <span class="sticker" style="top: 45%; left: 4%; rotate: -8deg;">🚀</span>
-    <span class="sticker" style="top: 65%; left: 15%; rotate: 14deg;">🧪</span>
-    <span class="sticker" style="top: 83%; left: 6%; rotate: -10deg;">🪙</span>
-
-    <span class="sticker" style="top: 3%; left: 38%; rotate: 8deg;">☄️</span>
-    <span class="sticker" style="bottom: 8%; left: 34%; rotate: -6deg;">₿</span>
-    <span class="sticker" style="bottom: 9%; left: 58%; rotate: 12deg;">🔬</span>
-
-    <span class="sticker" style="top: 8%; right: 6%; rotate: 12deg;">🔭</span>
-    <span class="sticker" style="top: 27%; right: 17%; rotate: -10deg;">💎</span>
-    <span class="sticker" style="top: 47%; right: 5%; rotate: 9deg;">🌙</span>
-    <span class="sticker" style="top: 67%; right: 16%; rotate: -14deg;">🧬</span>
-    <span class="sticker" style="top: 84%; right: 7%; rotate: 7deg;">⚛️</span>
-  </div>
-
   <main>
-    <h1>Ritu Bhatiya</h1>
-    <p class="role">Fraud Investigations <span>@</span> MoonPay</p>
+    <h1>Nerdy Nova</h1>
 
     <section class="about">
       <h2>about me</h2>
@@ -325,6 +261,9 @@
     let comets = [];
     let pointer = null;
 
+    // Real stars are not all white: hot ones are blue-white, cooler ones yellow or orange
+    const starColors = ['255, 255, 255', '255, 255, 255', '202, 220, 255', '170, 196, 255', '255, 244, 214', '255, 214, 170'];
+
     function resize() {
       const sharpness = window.devicePixelRatio || 1;
       width = window.innerWidth;
@@ -333,38 +272,80 @@
       canvas.height = height * sharpness;
       ctx.setTransform(sharpness, 0, 0, sharpness, 0, 0);
 
-      const count = Math.min(220, Math.round(width * height / 7000));
-      stars = Array.from({ length: count }, () => ({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        size: Math.random() * 1.4 + 0.3,
-        vx: (Math.random() - 0.5) * 0.15,
-        vy: (Math.random() - 0.5) * 0.15,
-        phase: Math.random() * 6.28,
-        speed: Math.random() * 1.5 + 0.5,
-      }));
+      const count = Math.min(450, Math.round(width * height / 3500));
+      stars = Array.from({ length: count }, () => {
+        // Most stars are faint and only a few are bright, like the real night sky
+        const magnitude = Math.random() ** 5;
+        return {
+          x: Math.random() * width,
+          y: Math.random() * height,
+          size: 0.4 + magnitude * 2,
+          brightness: 0.45 + magnitude * 0.55,
+          color: starColors[Math.floor(Math.random() * starColors.length)],
+          vx: (Math.random() - 0.5) * 0.04,
+          vy: (Math.random() - 0.5) * 0.04,
+          phase: Math.random() * 6.28,
+          speed: 1 + Math.random() * 3,
+          jitter: Math.random(),
+        };
+      });
       if (calm) draw(0);
+    }
+
+    function drawStar(star, t) {
+      // Flicker: two overlapping pulses plus a little random shake, so it never looks regular
+      const flicker = 0.7
+        + 0.2 * Math.sin(t * star.speed + star.phase)
+        + 0.1 * Math.sin(t * star.speed * 4.3 + star.phase * 3)
+        + (calm ? 0 : (Math.random() - 0.5) * 0.3 * star.jitter);
+      const light = Math.min(1, Math.max(0.12, flicker)) * star.brightness;
+
+      // Brighter stars get a soft coloured halo
+      if (star.size > 1.1) {
+        const reach = star.size * 6;
+        const halo = ctx.createRadialGradient(star.x, star.y, 0, star.x, star.y, reach);
+        halo.addColorStop(0, `rgba(${star.color}, ${light * 0.55})`);
+        halo.addColorStop(1, `rgba(${star.color}, 0)`);
+        ctx.fillStyle = halo;
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, reach, 0, 6.28);
+        ctx.fill();
+      }
+
+      // The very brightest get thin cross-shaped rays that pulse with the flicker
+      if (star.size > 1.9) {
+        const ray = star.size * 9 * light;
+        ctx.strokeStyle = `rgba(${star.color}, ${light * 0.45})`;
+        ctx.lineWidth = 0.6;
+        ctx.beginPath();
+        ctx.moveTo(star.x - ray, star.y);
+        ctx.lineTo(star.x + ray, star.y);
+        ctx.moveTo(star.x, star.y - ray);
+        ctx.lineTo(star.x, star.y + ray);
+        ctx.stroke();
+      }
+
+      // The star itself: a sharp point of light
+      ctx.fillStyle = `rgba(${star.size > 1.1 ? '255, 255, 255' : star.color}, ${light})`;
+      ctx.beginPath();
+      ctx.arc(star.x, star.y, star.size, 0, 6.28);
+      ctx.fill();
     }
 
     function draw(time) {
       const t = time / 1000;
       ctx.clearRect(0, 0, width, height);
 
-      // Twinkling, slowly drifting stars
       for (const star of stars) {
         star.x = (star.x + star.vx + width) % width;
         star.y = (star.y + star.vy + height) % height;
-        const twinkle = 0.35 + 0.65 * Math.abs(Math.sin(t * star.speed + star.phase));
-        ctx.fillStyle = `rgba(244, 236, 210, ${twinkle})`;
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.size, 0, 6.28);
-        ctx.fill();
+        drawStar(star, t);
 
         // Join nearby stars to the cursor, like drawing a constellation
         if (pointer) {
           const distance = Math.hypot(star.x - pointer.x, star.y - pointer.y);
           if (distance < 160) {
-            ctx.strokeStyle = `rgba(201, 212, 138, ${(1 - distance / 160) * 0.6})`;
+            ctx.strokeStyle = `rgba(201, 166, 255, ${(1 - distance / 160) * 0.6})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(pointer.x, pointer.y);
@@ -388,7 +369,7 @@
         comet.x += comet.vx;
         comet.y += comet.vy;
         comet.life -= 0.015;
-        ctx.strokeStyle = `rgba(244, 236, 210, ${Math.max(comet.life, 0)})`;
+        ctx.strokeStyle = `rgba(255, 255, 255, ${Math.max(comet.life, 0)})`;
         ctx.lineWidth = 1.5;
         ctx.beginPath();
         ctx.moveTo(comet.x, comet.y);
@@ -401,7 +382,7 @@
       for (const ring of rings) {
         ring.radius += 6;
         ring.life -= 0.02;
-        ctx.strokeStyle = `rgba(226, 168, 92, ${Math.max(ring.life, 0)})`;
+        ctx.strokeStyle = `rgba(157, 77, 255, ${Math.max(ring.life, 0)})`;
         ctx.lineWidth = 2;
         ctx.beginPath();
         ctx.arc(ring.x, ring.y, ring.radius, 0, 6.28);
@@ -430,16 +411,12 @@
     if (!calm) requestAnimationFrame(draw);
 
     /* ---------- Reacting to the mouse ---------- */
-    const layer = document.querySelector('.stickers');
-    const stickers = document.querySelectorAll('.sticker');
     const readout = document.querySelector('.hud.left');
     const pad = (number) => String(Math.round(number)).padStart(4, '0');
 
     window.addEventListener('pointermove', (event) => {
       pointer = { x: event.clientX, y: event.clientY };
       readout.textContent = `x ${pad(event.clientX)} · y ${pad(event.clientY)}`;
-      // Stickers lean slightly away from the cursor, which gives a sense of depth
-      layer.style.translate = `${(0.5 - event.clientX / width) * 30}px ${(0.5 - event.clientY / height) * 30}px`;
     });
 
     document.addEventListener('pointerleave', () => pointer = null);
@@ -458,20 +435,9 @@
           vx: Math.cos(angle) * power,
           vy: Math.sin(angle) * power,
           life: 1,
-          color: i % 2 ? '226, 168, 92' : '201, 212, 138',
+          color: i % 2 ? '157, 77, 255' : '201, 166, 255',
         });
       }
-
-      // Push every sticker away from the click, then let it spring back
-      stickers.forEach((sticker) => {
-        const box = sticker.getBoundingClientRect();
-        const dx = box.left + box.width / 2 - x;
-        const dy = box.top + box.height / 2 - y;
-        const distance = Math.hypot(dx, dy) || 1;
-        const push = 40 + Math.max(0, 300 - distance) * 0.4;
-        sticker.style.transform = `translate(${dx / distance * push}px, ${dy / distance * push}px)`;
-      });
-      setTimeout(() => stickers.forEach((sticker) => sticker.style.transform = ''), 350);
     });
   </script>
 </body>
